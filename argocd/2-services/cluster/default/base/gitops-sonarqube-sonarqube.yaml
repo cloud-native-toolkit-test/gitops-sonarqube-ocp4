@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-sonarqube-sonarqube
+spec:
+  destination:
+    namespace: gitops-sonarqube
+    server: https://kubernetes.default.svc
+  project: 2-services
+  source:
+    path: payload/2-services/namespace/gitops-sonarqube/sonarqube
+    repoURL: https://github.com/cloud-native-toolkit-test/gitops-sonarqube-ocp4.git
+    targetRevision: main
+    helm:
+      releaseName: sonarqube
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  ignoreDifferences: []
