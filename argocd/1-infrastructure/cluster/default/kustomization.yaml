@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - base/gitops-sonarqube-sonarqube-sonarqube-rbac.yaml
   - base/gitops-sonarqube-sonarqube-sonarqube-sa.yaml
   - base/gitops-sonarqube-sonarqube-sonarqube-scc.yaml
   - base/namespace-gitops-sonarqube.yaml
