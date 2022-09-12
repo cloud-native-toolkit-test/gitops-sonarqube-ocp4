@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - base/namespace-sms-test.yaml
   - base/namespace-sms-test1.yaml
+  - base/namespace-sms-test2.yaml
